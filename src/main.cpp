@@ -1,18 +1,25 @@
 #include <Arduino.h>
 
-// put function declarations here:
+// Declaración global de la variable retul
+  int result; 
+// Declaración de la función:
 int myFunction(int, int);
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  // código que solo se ejecuta una vez:
+  // inicio puerto serie 
+  Serial.begin(115200);
+  result = myFunction(2, 3);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // código que se ejecuta repetidamente:
+  Serial.print("El resultado de la función myFunction(2, 3) es ");
+  Serial.println(result);
+  delay(2000);
 }
 
-// put function definitions here:
+// Definición de la función:
 int myFunction(int x, int y) {
   return x + y;
 }
